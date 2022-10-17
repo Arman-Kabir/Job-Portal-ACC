@@ -1,4 +1,5 @@
 const { signupService, findUserByEmail } = require("../services/user.service");
+const { generateToken } = require("../utils/token");
 
 exports.signup = async (req, res) => {
     try {
@@ -33,6 +34,7 @@ exports.signup = async (req, res) => {
 
 exports.login = async (req, res) => {
     try {
+        console.log("login")
         const { email, password } = req.body;
 
         if (!email || !password) {
@@ -68,8 +70,29 @@ exports.login = async (req, res) => {
             });
         }
 
-    } catch (error) {
         
+
+        const token = generateToken(user);
+        // console.log(token);
+        const {password:pwd, ...others} = user.toObject();
+        
+        res.status(200).json({
+            status: "success",
+            message: "successfully logged in",
+            data: {
+                user: others,
+                // user,
+                token
+            }
+        });
+        
+
+
+    } catch (error) {
+        res.status(500).json({
+            status: "fail",
+            error,
+        })
     }
 };
 exports.getMe = async (req, res) => {
