@@ -1,0 +1,17 @@
+[
+    {
+        "name":"React Developer",
+        "description":" A React developer is responsible for the design and implementation of user interfaces (UIs) and UI components using React, a front-end JavaScript library. They develop and maintain UIs for web and mobile apps. ",
+        "location":"Dhaka",
+        "jobType":"full-time",
+        "salaryRange":15000,
+        "hiringManager":{
+            "name":"....",
+            "id":"...."
+        },
+        "appliedCandidates":[{
+            "email":"...",
+            "id":"..."
+        }]
+    }
+]
