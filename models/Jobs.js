@@ -14,36 +14,42 @@ const jobsSchema = mongoose.Schema(
             type: String,
             required: [true, "Please provide a description for the job"]
         },
-        location:{
+        location: {
             type: String,
             required: [true, "Please provide a location for the job"]
         },
-        jobType:{
+        jobType: {
             type: String,
-            enum:["full-time","part-time","contractual"],
-            default:"full-time",
+            enum: ["full-time", "part-time", "contractual"],
+            default: "full-time",
         },
-        salaryRange:{
-            type:Number,
-            required:[true,"Please provide a the salary for the job"]
+        salaryRange: {
+            type: Number,
+            required: [true, "Please provide a the salary for the job"]
         },
-        hiringManager:{
+        hiringManager: {
             name: String,
             id: {
                 type: ObjectId,
                 ref: 'User'
             }
         },
-        appliedCandidates:[{
-            type:ObjectId,
-            ref:"User"
+        appliedCandidates: [{
+            email: {
+                type: String,
+                unique: [true, "You have applied already"]
+            },
+            id: {
+                type: ObjectId,
+                ref: 'User'
+            }
         }]
     },
     {
-        timestamps:true,
+        timestamps: true,
     }
 );
 
-const Jobs = mongoose.model('Jobs',jobsSchema);
+const Jobs = mongoose.model('Jobs', jobsSchema);
 
 module.exports = Jobs;
