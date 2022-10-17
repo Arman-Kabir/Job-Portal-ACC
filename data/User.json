@@ -21,5 +21,17 @@
         "permanentAddress":"944 Russell Street",
         "imageURL":"https://i.bb.co/WnFSs9Y/unnamed.webp",
         "role":"hiring-manager"
+    },
+    {
+        "email":"kabir@test.com",
+        "password":"kabir123456#A",
+        "confirmPassword":"kabir123456#A",
+        "firstName":"Kabir",
+        "lastName":"Kabir",
+        "shippingAddress":"944 osthir Street",
+        "presentAddress":"944 osthir Street",
+        "permanentAddress":"944 Russell Street",
+        "imageURL":"https://i.bb.co/WnFSs9Y/unnamed.webp",
+        "role":"candidate"
     }
 ]
