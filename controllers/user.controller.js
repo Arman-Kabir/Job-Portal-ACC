@@ -70,8 +70,6 @@ exports.login = async (req, res) => {
             });
         }
 
-        
-
         const token = generateToken(user);
         // console.log(token);
         const {password:pwd, ...others} = user.toObject();
@@ -85,9 +83,7 @@ exports.login = async (req, res) => {
                 token
             }
         });
-        
-
-
+    
     } catch (error) {
         res.status(500).json({
             status: "fail",
@@ -96,5 +92,20 @@ exports.login = async (req, res) => {
     }
 };
 exports.getMe = async (req, res) => {
+    try {
+        // res.json(req.user);
+        console.log(req.user);
+        const user = await findUserByEmail(req.user?.email);
 
+        res.status(200).json({
+            status:"success",
+            data:user
+        })
+
+    } catch (error) {
+        res.status(500).json({
+            status: "fail",
+            error,
+        });
+    }
 };
