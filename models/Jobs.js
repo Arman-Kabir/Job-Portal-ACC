@@ -28,16 +28,17 @@ const jobsSchema = mongoose.Schema(
             required: [true, "Please provide a the salary for the job"]
         },
         hiringManager: {
-            // name: String,
+            name: String,
             id: {
                 type: ObjectId,
                 ref: 'User'
             }
         },
-        appliedCandidates: [{
-            type: ObjectId,
+        appliedCandidates: [{          
+            type: ObjectId,          
             ref: 'User'
-        }]
+            
+        }],
     },
     {
         timestamps: true,
