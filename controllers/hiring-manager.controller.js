@@ -1,4 +1,4 @@
-const { createJobService } = require("../services/hiring-manager.service");
+const { createJobService, getJobsOfHrService } = require("../services/hiring-manager.service");
 
 exports.createJob = async (req,res) => {
     try {
@@ -16,12 +16,12 @@ exports.createJob = async (req,res) => {
         });
     }
 };
-exports.getAllJobs = async (req,res) => {
+exports.getJobsOfHr = async (req,res) => {
     try {
-        
+        const jobs = await getJobsOfHrService();
         res.status(200).json({
             status: "success",
-            data: categories
+            data: jobs
         });
     } catch (error) {
         res.status(400).json({

@@ -6,6 +6,8 @@ const router = express.Router();
 
 router.post("/jobs",hiring_managerController.createJob)
 
+router.get("/manager/jobs",hiring_managerController.getJobsOfHr)
+
 
 
 router.patch("/jobs/:id",hiring_managerController.updateJob)
