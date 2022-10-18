@@ -15,14 +15,14 @@
         // }]
     },
     {
-        "name":"React Developer",
-        "description":" A React developer is responsible for the design and implementation of user interfaces (UIs) and UI components using React, a front-end JavaScript library. They develop and maintain UIs for web and mobile apps. ",
-        "location":"Dhaka",
-        "jobType":"full-time",
-        "salaryRange":15000,
+        "name":"Node Developer",
+        "description":" A Node developer is responsible for the design and implementation of back-end and backend components using Node, a front-end JavaScript library. They develop and maintain UIs for web and mobile apps. ",
+        "location":"Khulna",
+        "jobType":"part-time",
+        "salaryRange":18000,
         "hiringManager":{
-            "name":"Persian",
-            "id":"634e1fd9b3b47e6bc0f21cb6"
+            "name":"Fahim",
+            "id":"634e50c113e3dd64380a512a"
         }
         // "appliedCandidates":[{
         //     "email":"...",
