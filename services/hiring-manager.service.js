@@ -6,7 +6,9 @@ exports.createJobService = async (data) => {
     return job;
 }
 
-exports.getJobsOfHrService = async () => {
-    const jobs = await Jobs.find({}).populate('hiringManager.id');
+exports.getJobsOfHrService = async () => {   
+    const hrId = '634e50c113e3dd64380a512a';
+
+    const jobs = await Jobs.find({'hiringManager.id':hrId}).populate('hiringManager.id');
     return jobs;
 }
