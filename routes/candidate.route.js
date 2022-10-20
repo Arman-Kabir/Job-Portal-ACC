@@ -6,11 +6,11 @@ const verifyToken = require("../middleware/verifyToken");
 
 
 
-router.post('/file-upload',uploader.single("resume"), candidateController.fileUpload);
+router.post('/file-upload', uploader.single("resume"), candidateController.fileUpload);
 
 
-router.get("/jobs",candidateController.getAllJobs);
-router.get("/jobs/:id",candidateController.jobDetailsWithHrInfo);
-router.post("/jobs/:id/apply", verifyToken,  candidateController.applyJob);
+router.get("/jobs", candidateController.getAllJobs);
+router.get("/jobs/:id", candidateController.jobDetailsWithHrInfo);
+router.post("/jobs/:id/apply", verifyToken, uploader.single("resume"), candidateController.applyJob);
 
 module.exports = router;

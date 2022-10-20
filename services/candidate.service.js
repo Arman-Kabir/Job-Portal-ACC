@@ -10,6 +10,9 @@ exports.jobDetailsWithHrInfoService = async (id) => {
     const job = await Jobs.find({_id:id}).populate('hiringManager.id');
     return job;
 }
+
+
+
 exports.applyJobService = async (id) => {
     // const job = await ;
     return job;
