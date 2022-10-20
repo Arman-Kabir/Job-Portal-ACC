@@ -34,7 +34,7 @@ exports.signup = async (req, res) => {
 
 exports.login = async (req, res) => {
     try {
-        console.log("login")
+        // console.log("login")
         const { email, password } = req.body;
 
         if (!email || !password) {
@@ -69,7 +69,7 @@ exports.login = async (req, res) => {
                 error: "Your account is not active yet"
             });
         }
-        console.log(user);
+        // console.log(user);
         const token = generateToken(user);
         // console.log(token);
         const {password:pwd, ...others} = user.toObject();

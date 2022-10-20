@@ -5,8 +5,6 @@ const { promisify } = require("util");
  * 2. if not token send res
  * 3. decode the token
  * 4. if valid next
- * 
- * 
  */
 
 module.exports = async (req, res, next) => {
