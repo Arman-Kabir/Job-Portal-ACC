@@ -1,3 +1,4 @@
+// const { updateMany } = require("../models/Jobs");
 const Jobs = require("../models/Jobs");
 const User = require("../models/User");
 
@@ -25,5 +26,7 @@ exports.applyJobService = async (id, file, user) => {
         { _id: user.id },
         { $push: { resume: { data: file.filename } } }
     );
-    return res, res2;
+
+    
+    return [res, res2];
 }
