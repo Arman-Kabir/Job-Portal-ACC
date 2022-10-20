@@ -1,4 +1,5 @@
-const Jobs = require("../models/Jobs")
+const Jobs = require("../models/Jobs");
+const User = require("../models/User");
 
 
 exports.getAllJobsService = async () => {
@@ -18,6 +19,11 @@ exports.applyJobService = async (id, file, user) => {
     const res = await Jobs.updateOne(
         { _id: id },
         { $push: { appliedCandidates: user.id } }
-    )
-    return res;
+    );
+
+    const res2 = await User.updateOne(
+        { _id: user.id },
+        { $push: { resume: { data: file.filename } } }
+    );
+    return res, res2;
 }
