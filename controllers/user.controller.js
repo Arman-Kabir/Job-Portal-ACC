@@ -69,7 +69,7 @@ exports.login = async (req, res) => {
                 error: "Your account is not active yet"
             });
         }
-
+        console.log(user);
         const token = generateToken(user);
         // console.log(token);
         const {password:pwd, ...others} = user.toObject();
