@@ -8,6 +8,8 @@ router.post("/jobs",hiring_managerController.createJob)
 
 router.get("/manager/jobs",hiring_managerController.getJobsOfHr)
 
+router.get("/manager/jobs/:id",hiring_managerController.getJobDetails)
+
 
 
 router.patch("/jobs/:id",hiring_managerController.updateJob)
