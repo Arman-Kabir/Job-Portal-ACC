@@ -19,10 +19,10 @@ exports.applyJobService = async (id, file, user) => {
     // const job = await ;
     console.log(user.id);
 
-    const isApplied = await Jobs.find({ 'appliedCandidates': user.id  });
+    const isApplied = await Jobs.find({ _id: id, 'appliedCandidates': user.id });
     console.log(isApplied);
     // const [ appliedCandidates ] = await isApplied;
-    
+
 
     // console.log(appliedCandidates);
 
@@ -30,9 +30,6 @@ exports.applyJobService = async (id, file, user) => {
 
     // const unq = isApplied.appliedCandidate.findIndex(user.id);
     // console.log(unq);
-
-
-
 
     // const res = await Jobs.updateOne(
     //     { _id: id },
