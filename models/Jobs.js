@@ -35,12 +35,10 @@ const jobsSchema = mongoose.Schema(
                 ref: 'User'
             }
         },
-        appliedCandidates: [
-            {
-                type: ObjectId,
-                ref: 'User',
-                unique: [true, "U have already applied"]
-            }],
+        appliedCandidates: [{
+            type: ObjectId,
+            ref: 'User',
+        }],
 
     },
     {
