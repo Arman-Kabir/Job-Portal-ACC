@@ -6,7 +6,7 @@ const verifyToken = require("../middleware/verifyToken");
 
 
 
-router.post('/file-upload',uploader.single("image"), candidateController.fileUpload);
+router.post('/file-upload',uploader.single("resume"), candidateController.fileUpload);
 
 
 router.get("/jobs",candidateController.getAllJobs);
