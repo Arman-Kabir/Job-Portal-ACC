@@ -17,13 +17,22 @@ exports.jobDetailsWithHrInfoService = async (id) => {
 
 exports.applyJobService = async (id, file, user) => {
     // const job = await ;
-    // console.log(user.resume);
+    console.log(user.id);
 
-    const job = await Jobs.find({ _id: id });
-    // console.log(job);
-
-    const isApplied = job.appliedCandidates;
+    const isApplied = await Jobs.find({ 'appliedCandidates': user.id  });
     console.log(isApplied);
+    // const [ appliedCandidates ] = await isApplied;
+    
+
+    // console.log(appliedCandidates);
+
+
+
+    // const unq = isApplied.appliedCandidate.findIndex(user.id);
+    // console.log(unq);
+
+
+
 
     // const res = await Jobs.updateOne(
     //     { _id: id },
