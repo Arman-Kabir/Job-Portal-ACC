@@ -37,6 +37,7 @@ exports.jobDetailsWithHrInfo = async (req, res) => {
 exports.applyJob = async (req, res) => {
     try {
         const {id} = req.params;
+        console.log(id,req.body,req.user);
         const result = await applyJobService(id);
         res.status(200).json({
             status: "success",
