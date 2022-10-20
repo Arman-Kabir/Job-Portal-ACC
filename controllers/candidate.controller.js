@@ -39,7 +39,7 @@ exports.applyJob = async (req, res) => {
         const {id} = req.params;
         console.log(id,req.file,req.user);
 
-        const result = await applyJobService(id);
+        const result = await applyJobService(id,req.file,req.user);
         res.status(200).json({
             status: "success",
             data: result

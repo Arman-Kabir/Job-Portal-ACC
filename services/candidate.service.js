@@ -7,13 +7,17 @@ exports.getAllJobsService = async () => {
 }
 
 exports.jobDetailsWithHrInfoService = async (id) => {
-    const job = await Jobs.find({_id:id}).populate('hiringManager.id');
+    const job = await Jobs.find({ _id: id }).populate('hiringManager.id');
     return job;
 }
 
 
 
-exports.applyJobService = async (id) => {
+exports.applyJobService = async (id, file, user) => {
     // const job = await ;
-    return job;
+    const res = await Jobs.updateOne(
+        { _id: id },
+        { $push: { appliedCandidates: user.id } }
+    )
+    return res;
 }
