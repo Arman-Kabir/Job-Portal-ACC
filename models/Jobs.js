@@ -39,6 +39,16 @@ const jobsSchema = mongoose.Schema(
             type: ObjectId,
             ref: 'User',
         }],
+        // appliedCandidates: [{
+        //     id: {
+        //         type: ObjectId,
+        //         ref: 'User',
+        //     },
+        //     airedat:{
+        //         type:Date,
+        //         max:'2022-10-19'
+        //     }
+        // }],
 
     },
     {
