@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const validator = require('validator');
+var uniqueValidator = require('mongoose-unique-validator');
 const { ObjectId } = mongoose.Schema.Types;
 
 const jobsSchema = mongoose.Schema(
@@ -34,16 +35,25 @@ const jobsSchema = mongoose.Schema(
                 ref: 'User'
             }
         },
-        appliedCandidates: [{          
-            type: ObjectId,          
-            ref: 'User'
-            
-        }],
+        appliedCandidates: [
+            {
+                type: ObjectId,
+                ref: 'User',
+                unique: [true, "U have already applied"]
+            }],
+
     },
     {
         timestamps: true,
     }
 );
+
+jobsSchema.plugin(uniqueValidator);
+
+// jobsSchema.pre('UpdateOne', function (next) {
+//     this.options.runValidators = true
+//     next()
+// });
 
 const Jobs = mongoose.model('Jobs', jobsSchema);
 

@@ -17,6 +17,7 @@ exports.jobDetailsWithHrInfoService = async (id) => {
 
 exports.applyJobService = async (id, file, user) => {
     // const job = await ;
+    console.log(user.resume);
     const res = await Jobs.updateOne(
         { _id: id },
         { $push: { appliedCandidates: user.id } }
@@ -27,6 +28,6 @@ exports.applyJobService = async (id, file, user) => {
         { $push: { resume: { data: file.filename } } }
     );
 
-    
+
     return [res, res2];
 }
