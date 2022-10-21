@@ -41,6 +41,7 @@ exports.getJobDetails = async (req,res) => {
     try {
         const {id} = req.params;
         const job = await getJobDetailsService(id);
+        console.log(id);
 
         res.status(200).json({
             status: "success",
@@ -54,6 +55,7 @@ exports.getJobDetails = async (req,res) => {
         });
     }
 };
+
 exports.updateJob = async (req,res) => {
     try {
         

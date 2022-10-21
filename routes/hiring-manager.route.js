@@ -6,6 +6,8 @@ const verifyToken = require("../middleware/verifyToken");
 
 const router = express.Router();
 
+// console.log(req);
+
 router.post("/jobs", verifyToken, authorization("hiring-manager"), hiring_managerController.createJob)
 
 router.get("/manager/jobs",verifyToken, hiring_managerController.getJobsOfHr)
