@@ -9,10 +9,6 @@
             "name":"Persian",
             "id":"634e1fd9b3b47e6bc0f21cb6"
         }
-        // "appliedCandidates":[{
-        //     "email":"...",
-        //     "id":"..."
-        // }]
     },
     {
         "name":"Node Developer",
@@ -24,9 +20,5 @@
             "name":"Fahim",
             "id":"634e50c113e3dd64380a512a"
         }
-        // "appliedCandidates":[{
-        //     "email":"...",
-        //     "id":"..."
-        // }]
     }
 ]
