@@ -16,3 +16,8 @@ exports.getJobDetailsService = async (id) => {
     const job = await Jobs.find({ _id: id }).populate('appliedCandidates');
     return job;
 }
+
+exports.updateJobService = async (id) => {
+    const job = await Jobs.find({ _id: id });
+    return job;
+}

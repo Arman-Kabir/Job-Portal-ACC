@@ -1,4 +1,4 @@
-const { createJobService, getJobsOfHrService, getJobDetailsService } = require("../services/hiring-manager.service");
+const { createJobService, getJobsOfHrService, getJobDetailsService, updateJobService } = require("../services/hiring-manager.service");
 
 exports.createJob = async (req,res) => {
     try {
@@ -58,10 +58,12 @@ exports.getJobDetails = async (req,res) => {
 
 exports.updateJob = async (req,res) => {
     try {
+        const {id} = req.params;
+        const job = await updateJobService(id);
         
         res.status(200).json({
             status: "success",
-            data: categories
+            data: job
         });
     } catch (error) {
         res.status(400).json({
