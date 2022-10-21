@@ -7,7 +7,7 @@
         "salaryRange":15000,
         "hiringManager":{
             "name":"Persian",
-            "id":"634e1fd9b3b47e6bc0f21cb6"
+            "id":"6352b07be847016a5c7669eb"
         }
     },
     {
@@ -18,7 +18,7 @@
         "salaryRange":18000,
         "hiringManager":{
             "name":"Fahim",
-            "id":"634e50c113e3dd64380a512a"
+            "id":"6352b091e847016a5c7669ed"
         }
     }
 ]
