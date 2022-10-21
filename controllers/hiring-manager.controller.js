@@ -50,7 +50,7 @@ exports.getJobDetails = async (req,res) => {
     } catch (error) {
         res.status(400).json({
             status: "fail",
-            message: "can't create Job",
+            message: "can't load info",
             error: error.message
         });
     }

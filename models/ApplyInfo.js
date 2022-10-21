@@ -7,7 +7,7 @@ const applyInfoSchema = mongoose.Schema({
     appliedAt:{
         type:Date,
         default:Date.now,
-        max:'2022-10-21'
+        max:'2022-10-22'
     },
     jobId:{
         type:ObjectId,

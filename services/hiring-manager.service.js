@@ -13,6 +13,6 @@ exports.getJobsOfHrService = async (user) => {
 }
 
 exports.getJobDetailsService = async (id) => {
-    const job = await Jobs.find({ _id: id }); //.populate('appliedCandidates.id');
+    const job = await Jobs.find({ _id: id }).populate('appliedCandidates');
     return job;
 }
