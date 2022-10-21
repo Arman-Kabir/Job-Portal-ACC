@@ -16,6 +16,9 @@ exports.createJob = async (req,res) => {
         });
     }
 };
+
+
+
 exports.getJobsOfHr = async (req,res) => {
     try {
         const jobs = await getJobsOfHrService();
@@ -31,6 +34,9 @@ exports.getJobsOfHr = async (req,res) => {
         });
     }
 };
+
+
+
 exports.getJobDetails = async (req,res) => {
     try {
         const {id} = req.params;

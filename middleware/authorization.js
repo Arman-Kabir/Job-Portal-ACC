@@ -1,8 +1,8 @@
 
-const middleware = (req, res, next) => {
+// const middleware = (req, res, next) => {
 
-    next();
-}
+//     next();
+// }
 
 module.exports = (...role) => {
 
