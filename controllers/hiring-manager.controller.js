@@ -29,7 +29,7 @@ exports.getJobsOfHr = async (req,res) => {
     } catch (error) {
         res.status(400).json({
             status: "fail",
-            message: "can't create Job",
+            message: "can't load jobs",
             error: error.message
         });
     }
@@ -59,16 +59,17 @@ exports.getJobDetails = async (req,res) => {
 exports.updateJob = async (req,res) => {
     try {
         const {id} = req.params;
-        const job = await updateJobService(id);
+        console.log(id,req.body);
+        const job = await updateJobService(id,req.body);
         
         res.status(200).json({
-            status: "success",
+            status: "successfully updated the job",
             data: job
         });
     } catch (error) {
         res.status(400).json({
             status: "fail",
-            message: "can't create Job",
+            message: "can't update Job",
             error: error.message
         });
     }

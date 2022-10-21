@@ -17,7 +17,10 @@ exports.getJobDetailsService = async (id) => {
     return job;
 }
 
-exports.updateJobService = async (id) => {
-    const job = await Jobs.find({ _id: id });
+exports.updateJobService = async (id, data) => {
+    const job = await Jobs.updateOne(
+        { _id: id },
+        { $set: data }
+    );
     return job;
 }
